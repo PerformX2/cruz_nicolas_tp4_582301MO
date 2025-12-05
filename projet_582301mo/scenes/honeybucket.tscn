@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://5d455m3a3xob"]
+
+[ext_resource type="Texture2D" uid="uid://bd8tusg2hh4jm" path="res://assets/images/honey_bucket/normal_honey_bucket.png" id="1_ajdus"]
+[ext_resource type="Script" uid="uid://kvgacf1l4t2o" path="res://scripts/honeybucket.gd" id="1_wgawm"]
+[ext_resource type="Texture2D" uid="uid://bcv03ge2t8enl" path="res://assets/images/honey_bucket/pickedup_honey_bucket.png" id="2_wgawm"]
+[ext_resource type="Texture2D" uid="uid://d0knpkm230qmv" path="res://assets/images/honey_bucket/standby_honey_bucket.png" id="3_65b7r"]
+[ext_resource type="AudioStream" uid="uid://d2tx55mlfjqog" path="res://assets/audio/honey_pickedup.wav" id="5_65b7r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_orirv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ajdus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wgawm")
+}],
+"loop": true,
+"name": &"pickedup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ajdus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_65b7r")
+}],
+"loop": true,
+"name": &"standby",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_045iq"]
+
+[node name="honeybucket" type="Area2D"]
+script = ExtResource("1_wgawm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.01, -0.025)
+scale = Vector2(0.0894397, 0.0894397)
+sprite_frames = SubResource("SpriteFrames_orirv")
+animation = &"standby"
+frame = 1
+frame_progress = 0.0705688
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_045iq")
+
+[node name="sfx_honey_pickedup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_65b7r")
+volume_db = -23.0
+pitch_scale = 2.6
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

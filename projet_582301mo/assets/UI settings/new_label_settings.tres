@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c1nfoba3hyhja"]
+
+[ext_resource type="FontFile" uid="uid://c6grne0lq1re4" path="res://assets/fonts/Pixeled.ttf" id="1_omlx5"]
+
+[resource]
+font = ExtResource("1_omlx5")
+font_size = 20
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)

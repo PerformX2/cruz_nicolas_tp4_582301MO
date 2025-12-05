@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj7rqu1i7uw8b"]
+
+[ext_resource type="Script" uid="uid://d1hwgtgo3cm36" path="res://scripts/press_enter.gd" id="1_te0jj"]
+[ext_resource type="Texture2D" uid="uid://dmoted5n61t6l" path="res://assets/images/press_enter.png" id="2_5mmtw"]
+
+[sub_resource type="Animation" id="Animation_te0jj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5mmtw"]
+resource_name = "pulse"
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button:scale")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_te0jj"]
+_data = {
+&"RESET": SubResource("Animation_te0jj"),
+&"pulse": SubResource("Animation_5mmtw")
+}
+
+[node name="press_enter" type="Node2D"]
+script = ExtResource("1_te0jj")
+
+[node name="button" type="Sprite2D" parent="."]
+position = Vector2(11, 0)
+texture = ExtResource("2_5mmtw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_te0jj")
+}
+autoplay = "pulse"

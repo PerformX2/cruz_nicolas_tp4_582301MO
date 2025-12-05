@@ -1,0 +1,160 @@
+[gd_scene load_steps=13 format=3 uid="uid://0in4fdamtkga"]
+
+[ext_resource type="Script" uid="uid://dfvfpx4calnek" path="res://scripts/player_controller.gd" id="1_mo32d"]
+[ext_resource type="Script" uid="uid://it8teuf6rrv6" path="res://scripts/player_animator.gd" id="2_ou4hl"]
+[ext_resource type="Texture2D" uid="uid://dowwsvtr2i2wr" path="res://assets/images/pigor/Pigor animation sheet.png" id="3_ou4hl"]
+[ext_resource type="AudioStream" uid="uid://cj1d7244gqhdy" path="res://assets/audio/jump.wav" id="4_dqkch"]
+
+[sub_resource type="Animation" id="Animation_ou4hl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(17.343, 1621, 30.376, 41.444)]
+}
+
+[sub_resource type="Animation" id="Animation_s4tku"]
+resource_name = "celebration"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(134.048, 2323.09, 52.246, 43.609), Rect2(336.403, 1307.26, 36.861, 33.534), Rect2(271.628, 1307.26, 36.861, 33.534), Rect2(207.728, 1307.26, 36.861, 33.534), Rect2(143.533, 1307.26, 36.861, 33.534), Rect2(13.683, 1298.9, 36.861, 44.229)]
+}
+
+[sub_resource type="Animation" id="Animation_k1be4"]
+resource_name = "fall"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(264.188, 1877.19, 37.116, 41.444)]
+}
+
+[sub_resource type="Animation" id="Animation_mo32d"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(17.343, 1621, 30.376, 41.444), Rect2(81.448, 1621, 30.376, 41.444), Rect2(17.343, 1621, 30.376, 41.444), Rect2(81.448, 1621, 30.376, 41.444), Rect2(17.343, 1621, 30.376, 41.444), Rect2(81.448, 1621, 30.376, 41.444), Rect2(17.343, 1621, 30.376, 41.444), Rect2(81.448, 1621, 30.376, 41.444), Rect2(17.343, 1621, 30.376, 41.444)]
+}
+
+[sub_resource type="Animation" id="Animation_k1d3g"]
+resource_name = "jump"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(144.388, 1875.62, 30.376, 41.444)]
+}
+
+[sub_resource type="Animation" id="Animation_wb1h4"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(81.343, 724.775, 30.376, 41.444), Rect2(145.338, 724.775, 30.376, 41.444), Rect2(208.218, 724.775, 30.376, 41.444), Rect2(271.878, 724.775, 30.376, 41.444), Rect2(334.868, 724.775, 30.376, 41.444), Rect2(399.873, 724.775, 30.376, 41.444), Rect2(464.278, 724.775, 30.376, 41.444), Rect2(528.768, 724.775, 30.376, 41.444), Rect2(81.343, 724.775, 30.376, 41.444)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ou4hl"]
+_data = {
+&"RESET": SubResource("Animation_ou4hl"),
+&"celebration": SubResource("Animation_s4tku"),
+&"fall": SubResource("Animation_k1be4"),
+&"idle": SubResource("Animation_mo32d"),
+&"jump": SubResource("Animation_k1d3g"),
+&"move": SubResource("Animation_wb1h4")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mo32d"]
+radius = 11.0
+height = 40.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_mo32d")
+speed = 3.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -15)
+zoom = Vector2(4, 4)
+limit_bottom = 330
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 9.0
+
+[node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
+script = ExtResource("2_ou4hl")
+player_controller = NodePath("..")
+animation_player = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ou4hl")
+}
+autoplay = "idle"
+speed_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerAnimator"]
+texture = ExtResource("3_ou4hl")
+region_enabled = true
+region_rect = Rect2(17.343, 1621, 30.376, 41.444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mo32d")
+
+[node name="sfx_jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dqkch")
+volume_db = -26.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr0umqjt1cfjb"]
+
+[ext_resource type="Script" uid="uid://c1q1u2re7mje7" path="res://scripts/key.gd" id="1_fttkb"]
+[ext_resource type="PackedScene" uid="uid://5d455m3a3xob" path="res://scenes/honeybucket.tscn" id="2_wy8tx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fttkb"]
+radius = 6.66665
+height = 13.3333
+
+[node name="key" type="StaticBody2D"]
+script = ExtResource("1_fttkb")
+
+[node name="honeybucket" parent="." instance=ExtResource("2_wy8tx")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CapsuleShape2D_fttkb")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
