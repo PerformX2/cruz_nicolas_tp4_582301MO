@@ -16,12 +16,3 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Player" and !is_collected:
 		is_collected = true
 		emit_signal("honeybucket_collected")
-
-func _on_portail_1_body_exited(body):
-	if portal_ready and body.name == "Player":
-		in_portail_zone = false
-		
-		if keytaken == false:
-			print("out_portal_zone")  # <- only print if key NOT taken
-			
-			

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://0in4fdamtkga" path="res://scenes/player.tscn" id="2_ancdk"]
 [ext_resource type="Texture2D" uid="uid://cgaic0htwo0qa" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Decorations/GRASS 1-1.png" id="3_6b3hp"]
 [ext_resource type="Texture2D" uid="uid://vempkmj5c6rw" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Decorations/GRASS 3-2.png" id="4_3qm2i"]
-[ext_resource type="Script" uid="uid://b273fslkmiwge" path="res://scripts/portail_1.gd" id="4_g4lra"]
 [ext_resource type="PackedScene" uid="uid://bj7rqu1i7uw8b" path="res://scenes/press_enter.tscn" id="5_g4lra"]
+[ext_resource type="Script" uid="uid://bcfbear71pcnc" path="res://scripts/portal.gd" id="5_ocm78"]
 [ext_resource type="AudioStream" uid="uid://c6va6djtr7eg" path="res://assets/audio/portal_opened.wav" id="6_faucf"]
 [ext_resource type="Texture2D" uid="uid://p4sro8u7fxfi" path="res://assets/images/portail_fermé.png" id="6_jftbo"]
 [ext_resource type="Texture2D" uid="uid://dnnw15atrmxkm" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Decorations/MUSHROOM 2-1.png" id="6_sgi1b"]
@@ -1157,34 +1157,35 @@ metadata/_edit_use_anchors_ = true
 [node name="key" parent="." instance=ExtResource("18_jftbo")]
 position = Vector2(856, 128)
 
-[node name="portail_1" type="Area2D" parent="."]
+[node name="portal" type="Area2D" parent="."]
 z_index = 11
 position = Vector2(976, 216)
-script = ExtResource("4_g4lra")
+script = ExtResource("5_ocm78")
+next_scene_path = "uid://bfi4h0gsmry4n"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portail_1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
 z_index = 15
 position = Vector2(-2.38419e-07, -2.38419e-07)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_g4lra")
 
-[node name="portal_closed" type="Sprite2D" parent="portail_1"]
+[node name="portal_closed" type="Sprite2D" parent="portal"]
 z_index = -10
 texture_filter = 1
 position = Vector2(-1.43051e-05, 9.53674e-07)
 scale = Vector2(0.105637, 0.105637)
 texture = ExtResource("6_jftbo")
 
-[node name="portal_opened" type="Sprite2D" parent="portail_1"]
+[node name="portal_opened" type="Sprite2D" parent="portal"]
 position = Vector2(5.24521e-06, -9.53674e-07)
 scale = Vector2(0.11299, 0.11299)
 texture = ExtResource("7_ocm78")
 
-[node name="sfx_portail_opened" type="AudioStreamPlayer" parent="portail_1"]
+[node name="sfx_portail_opened" type="AudioStreamPlayer" parent="portal"]
 stream = ExtResource("6_faucf")
 volume_db = -20.0
 
-[node name="sfx_portail_closed" type="AudioStreamPlayer" parent="portail_1"]
+[node name="sfx_portail_closed" type="AudioStreamPlayer" parent="portal"]
 stream = ExtResource("7_g528s")
 volume_db = -5.0
 
@@ -1312,7 +1313,7 @@ texture_filter = 1
 texture = ExtResource("12_g528s")
 centered = false
 
-[connection signal="body_entered" from="portail_1" to="key" method="_on_portail_1_body_entered"]
-[connection signal="body_entered" from="portail_1" to="portail_1" method="_on_body_entered"]
-[connection signal="body_exited" from="portail_1" to="key" method="_on_portail_1_body_exited"]
-[connection signal="body_exited" from="portail_1" to="portail_1" method="_on_body_exited"]
+[connection signal="body_entered" from="portal" to="key" method="_on_portail_1_body_entered"]
+[connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]
+[connection signal="body_exited" from="portal" to="key" method="_on_portail_1_body_exited"]
+[connection signal="body_exited" from="portal" to="portal" method="_on_body_exited"]
