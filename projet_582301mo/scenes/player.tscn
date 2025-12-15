@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://0in4fdamtkga"]
+[gd_scene load_steps=14 format=3 uid="uid://0in4fdamtkga"]
 
 [ext_resource type="Script" uid="uid://dfvfpx4calnek" path="res://scripts/player_controller.gd" id="1_mo32d"]
 [ext_resource type="Script" uid="uid://it8teuf6rrv6" path="res://scripts/player_animator.gd" id="2_ou4hl"]
 [ext_resource type="Texture2D" uid="uid://dowwsvtr2i2wr" path="res://assets/images/pigor/Pigor animation sheet.png" id="3_ou4hl"]
 [ext_resource type="AudioStream" uid="uid://cj1d7244gqhdy" path="res://assets/audio/jump.wav" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://c7qh7kvyihilm" path="res://assets/audio/bee_sfx_1.wav" id="5_qlg0r"]
 
 [sub_resource type="Animation" id="Animation_ou4hl"]
 length = 0.001
@@ -158,3 +159,7 @@ shape = SubResource("CapsuleShape2D_mo32d")
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dqkch")
 volume_db = -26.0
+
+[node name="sfx_hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qlg0r")
+pitch_scale = 3.88

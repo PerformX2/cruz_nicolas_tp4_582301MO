@@ -4,7 +4,7 @@ extends StaticBody2D
 
 var in_portail_zone = false
 var portal_ready = false
-var keytaken = false  # you already have this variable
+var keytaken = false 
 var is_collected := false
 signal honeybucket_collected
 

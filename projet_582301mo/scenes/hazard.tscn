@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6m8bqgryuu43"]
 
 [ext_resource type="Script" uid="uid://dhj7enxeliwp7" path="res://scripts/hazard.gd" id="1_awlwb"]
-[ext_resource type="Texture2D" uid="uid://bm2a7yw505ipk" path="res://assets/images/alert_icon.png" id="1_rxmjj"]
+[ext_resource type="Texture2D" uid="uid://dd4pacy1hrlne" path="res://assets/images/pixel_art_bee_1.png" id="2_awlwb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_awlwb"]
-radius = 40.0
+radius = 6.0
 
 [node name="Hazard" type="Area2D"]
 script = ExtResource("1_awlwb")
@@ -12,8 +12,8 @@ script = ExtResource("1_awlwb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_awlwb")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.240001, 0.240001)
-texture = ExtResource("1_rxmjj")
+[node name="Bee" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.0400006, 0.0400006)
+texture = ExtResource("2_awlwb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,12 +3,15 @@ class_name MainMenu
 
 @onready var start_button = $MarginContainer/HBoxContainer/VBoxContainer/Start_Button as Button
 @onready var exit_button = $MarginContainer/HBoxContainer/VBoxContainer/Exit_Button as Button
+@onready var controls_button = $MarginContainer/HBoxContainer/VBoxContainer/Controls_Button as Button 
+
 @onready var start_level = preload("res://scenes/zone_1.tscn") as PackedScene
 @onready var controls = preload("res://scenes/controls_menu.tscn") as PackedScene
 
 func _ready():
 	start_button.button_down.connect(on_start_pressed)
 	exit_button.button_down.connect(on_exit_pressed)
+	controls_button.button_down.connect(on_controls_pressed)
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("start"):
@@ -20,3 +23,5 @@ func on_start_pressed() -> void:
 func on_exit_pressed() -> void:
 	get_tree().quit()
 	
+func on_controls_pressed() -> void:
+	get_tree().change_scene_to_packed(controls)

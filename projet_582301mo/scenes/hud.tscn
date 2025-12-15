@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bruwvlxxvms1c"]
+[gd_scene load_steps=5 format=3 uid="uid://bruwvlxxvms1c"]
 
 [ext_resource type="Script" uid="uid://cuubqwyqfpv23" path="res://scripts/hud.gd" id="1_y5tme"]
 [ext_resource type="Texture2D" uid="uid://dfkpsd66lvjmt" path="res://assets/images/life.png" id="2_oo0fn"]
+[ext_resource type="FontFile" uid="uid://c6grne0lq1re4" path="res://assets/fonts/Pixeled.ttf" id="3_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://bm2a7yw505ipk" path="res://assets/images/alert_icon.png" id="4_6fi6k"]
 
 [node name="HUD" type="Control" groups=["hud"]]
 layout_mode = 3
@@ -12,21 +14,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y5tme")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("2_oo0fn")
-
 [node name="HealthLabel" type="Label" parent="."]
 layout_mode = 1
-offset_right = 57.0
-offset_bottom = 23.0
-text = "Lives: 3"
+offset_left = 32.0
+offset_right = 256.0
+offset_bottom = 102.0
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 36
+text = "VIES x3"
+
+[node name="HealthRect" type="TextureRect" parent="HealthLabel"]
+layout_mode = 2
+offset_left = 232.0
+offset_top = 32.0
+offset_right = 333.0
+offset_bottom = 133.0
+scale = Vector2(0.519999, 0.519999)
+texture = ExtResource("2_oo0fn")
+
+[node name="InfoLabel" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -416.0
+offset_top = 24.0
+offset_right = -107.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 14
+text = "COLLECTE LE MIEL POUR 
+CHANGER DE MONDE !"
+horizontal_alignment = 2
+
+[node name="InfoRect" type="TextureRect" parent="InfoLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.305
+anchor_top = -0.168
+anchor_right = 1.305
+anchor_bottom = -0.168
+offset_left = -99.245
+offset_top = 2.96
+offset_right = 227.755
+offset_bottom = 329.96
+scale = Vector2(0.317984, 0.317984)
+texture = ExtResource("4_6fi6k")
