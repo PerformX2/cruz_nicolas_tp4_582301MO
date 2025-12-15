@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cinfw7l47ycl0"]
+[gd_scene load_steps=24 format=4 uid="uid://cinfw7l47ycl0"]
 
 [ext_resource type="Texture2D" uid="uid://cacqfcwl63icl" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Tiles/Tilesheet - WOODS.png" id="1_1gua8"]
 [ext_resource type="PackedScene" uid="uid://0in4fdamtkga" path="res://scenes/player.tscn" id="2_ancdk"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://3r2qbmc2mdnx" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Backgrounds/layers/WOODS - First.png" id="12_g528s"]
 [ext_resource type="PackedScene" uid="uid://cr0umqjt1cfjb" path="res://scenes/key.tscn" id="18_jftbo"]
 [ext_resource type="PackedScene" uid="uid://bruwvlxxvms1c" path="res://scenes/hud.tscn" id="18_ocm78"]
+[ext_resource type="PackedScene" uid="uid://c6m8bqgryuu43" path="res://scenes/hazard.tscn" id="20_g6cp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kymhr"]
 texture = ExtResource("1_1gua8")
@@ -1143,7 +1144,7 @@ tile_set = SubResource("TileSet_hc3m2")
 
 [node name="Player" parent="." instance=ExtResource("2_ancdk")]
 z_index = 15
-position = Vector2(64, 48)
+position = Vector2(64, 236)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player"]
 
@@ -1312,6 +1313,9 @@ motion_mirroring = Vector2(512, 0)
 texture_filter = 1
 texture = ExtResource("12_g528s")
 centered = false
+
+[node name="Hazard" parent="." instance=ExtResource("20_g6cp3")]
+position = Vector2(768, 216)
 
 [connection signal="body_entered" from="portal" to="key" method="_on_portail_1_body_entered"]
 [connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]

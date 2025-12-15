@@ -1240,7 +1240,7 @@ flip_h = true
 
 [node name="Grass1-3" type="Sprite2D" parent="images"]
 z_index = -1
-position = Vector2(186.603, -8.34154)
+position = Vector2(182.423, -8.34154)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_ymihn")
 
@@ -1265,7 +1265,7 @@ flip_h = true
 
 [node name="Grass3-5" type="Sprite2D" parent="images"]
 z_index = -1
-position = Vector2(175.457, -8.34154)
+position = Vector2(171.277, -8.34154)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_xpmjx")
 
