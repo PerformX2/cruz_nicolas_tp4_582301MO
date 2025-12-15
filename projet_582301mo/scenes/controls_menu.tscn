@@ -139,9 +139,11 @@ size_flags_horizontal = 0
 layout_mode = 2
 theme_override_constants/separation = 65
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer4/VBoxContainer"]
+[node name="exit_button" type="Button" parent="MarginContainer/HBoxContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_constants/outline_size = 12
+theme_override_constants/line_spacing = -2
 theme_override_fonts/font = ExtResource("2_knfhs")
 theme_override_font_sizes/font_size = 24
 text = "<-   Retour 

@@ -1147,7 +1147,7 @@ tile_set = SubResource("TileSet_hc3m2")
 
 [node name="Player" parent="." instance=ExtResource("2_pmhey")]
 z_index = 15
-position = Vector2(15, 189)
+position = Vector2(16, 192)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player"]
 
@@ -1222,10 +1222,10 @@ position = Vector2(366, -72)
 scale = Vector2(-0.984256, 1)
 
 [node name="Hazard6" parent="hazard/mirrored" instance=ExtResource("20_60aoh")]
-position = Vector2(-316, -251)
-rotation = 0.506238
-scale = Vector2(-13.796, 14.355)
-damage_amount = 3
+position = Vector2(-229, -260)
+rotation = 1.5708
+scale = Vector2(5.44, -5.66)
+damage_amount = 2
 
 [node name="Hazard" parent="hazard" instance=ExtResource("20_60aoh")]
 position = Vector2(122, 40)
@@ -1246,6 +1246,12 @@ position = Vector2(458, -318)
 
 [node name="Hazard5" parent="hazard" instance=ExtResource("20_60aoh")]
 position = Vector2(95, -136)
+
+[node name="Hazard7" parent="hazard" instance=ExtResource("20_60aoh")]
+position = Vector2(467, -132)
+rotation = 2.42792
+scale = Vector2(5.51953, 5.66)
+damage_amount = 2
 
 [node name="images" type="Sprite2D" parent="."]
 position = Vector2(160, 32)

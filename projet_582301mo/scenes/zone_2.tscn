@@ -1222,7 +1222,8 @@ scale = Vector2(1, -1)
 position = Vector2(-96, 8)
 
 [node name="Hazard2" parent="hazard" instance=ExtResource("17_wsxs7")]
-position = Vector2(439, -136)
+position = Vector2(440, -130)
+rotation = -3.14159
 scale = Vector2(5.44, 5.44)
 damage_amount = 2
 
@@ -1249,7 +1250,7 @@ flip_h = true
 
 [node name="DirectionalArrow3" type="Sprite2D" parent="images"]
 z_index = -1
-position = Vector2(9548.51, 981.7)
+position = Vector2(9548.51, 803.209)
 rotation = 1.5708
 scale = Vector2(1, 1.41991)
 texture = ExtResource("4_nw2bk")

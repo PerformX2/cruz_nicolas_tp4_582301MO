@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0kdtghpnlykw"]
+[gd_scene load_steps=5 format=3 uid="uid://c0kdtghpnlykw"]
 
 [ext_resource type="Script" uid="uid://dmnaftmd43mw8" path="res://scripts/main_menu.gd" id="1_p6ils"]
 [ext_resource type="Texture2D" uid="uid://8mpmi5j74gk6" path="res://assets/images/dark_forest(blue filter).jpg" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://b8pn1k641e8pk" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_dcjl3"]
+[ext_resource type="PackedScene" uid="uid://cmgeb0bngt45s" path="res://scenes/controls_menu.tscn" id="3_wu84c"]
 
 [node name="Main_Menu" type="Control" groups=["main_menu"]]
 layout_mode = 3
@@ -13,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p6ils")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,41 +56,74 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 18
 alignment = 1
 
-[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 60)
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dcjl3")
-theme_override_font_sizes/font_size = 36
-text = "Commencer
-le jeu
-"
 
 [node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 60)
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 12
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("3_dcjl3")
+theme_override_font_sizes/font_size = 36
+text = "Lancer
+le jeu
+"
+
+[node name="Seperator6" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/line_spacing = -2
 theme_override_fonts/font = ExtResource("3_dcjl3")
 theme_override_font_sizes/font_size = 36
 text = "Arrêt du
 jeu
 "
 
-[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator7" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Controls_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 60)
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/line_spacing = -2
 theme_override_fonts/font = ExtResource("3_dcjl3")
 theme_override_font_sizes/font_size = 36
 text = "Comment 
 jouer?"
+
+[node name="controls_menu" parent="." instance=ExtResource("3_wu84c")]
+visible = false
+layout_mode = 1

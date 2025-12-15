@@ -1226,13 +1226,13 @@ texture = ExtResource("8_g528s")
 
 [node name="DirectionalArrow2" type="Sprite2D" parent="images"]
 z_index = -1
-position = Vector2(-100.31, -3.68051)
+position = Vector2(-100.31, -22.0831)
 scale = Vector2(0.027864, 0.0368051)
 texture = ExtResource("8_g528s")
 
 [node name="DirectionalArrow3" type="Sprite2D" parent="images"]
 z_index = -1
-position = Vector2(-30.6504, -3.68051)
+position = Vector2(-33.4368, -47.8467)
 scale = Vector2(0.027864, 0.0368051)
 texture = ExtResource("8_g528s")
 
