@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://8mpmi5j74gk6" path="res://assets/images/dark_forest(blue filter).jpg" id="1_87tj7"]
 [ext_resource type="Texture2D" uid="uid://de546eopolud3" path="res://assets/images/sit.png" id="2_albv7"]
-[ext_resource type="Texture2D" uid="uid://bcv03ge2t8enl" path="res://assets/images/honey_bucket/pickedup_honey_bucket.png" id="3_87tj7"]
 [ext_resource type="FontFile" uid="uid://b8pn1k641e8pk" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_dcjl3"]
+[ext_resource type="Texture2D" uid="uid://bbvtr8kp5oj2k" path="res://assets/images/small_honey_jar.png" id="4_87tj7"]
 
 [node name="End_Menu" type="Control" groups=["main_menu"]]
 layout_mode = 3
@@ -75,40 +75,34 @@ cruz_nicolas_tp4_582301MO/
 tree/main/projet_582301mo/assets"
 horizontal_alignment = 1
 
-[node name="Pigor" type="TextureRect" parent="."]
-texture_filter = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-offset_left = 408.0
-offset_top = 552.0
-offset_right = 441.0
-offset_bottom = 585.0
-scale = Vector2(2.7433, 2.7433)
+size_flags_vertical = 8
+alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("2_albv7")
 
-[node name="honey1" type="TextureRect" parent="."]
-offset_left = 504.0
-offset_top = 568.0
-offset_right = 968.0
-offset_bottom = 1032.0
-scale = Vector2(0.20882, 0.20882)
-texture = ExtResource("3_87tj7")
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_87tj7")
 
-[node name="honey2" type="TextureRect" parent="."]
-offset_left = 584.0
-offset_top = 568.0
-offset_right = 1048.0
-offset_bottom = 1032.0
-scale = Vector2(0.20882, 0.20882)
-texture = ExtResource("3_87tj7")
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_87tj7")
 
-[node name="honey3" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 664.0
-offset_top = 568.0
-offset_right = 1128.0
-offset_bottom = 1032.0
-scale = Vector2(0.20882, 0.20882)
-texture = ExtResource("3_87tj7")
+[node name="TextureRect8" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_87tj7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
