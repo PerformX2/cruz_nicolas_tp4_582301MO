@@ -1317,6 +1317,7 @@ centered = false
 [node name="Hazard" parent="." instance=ExtResource("20_g6cp3")]
 position = Vector2(768, 216)
 
+[connection signal="health_changed" from="Player" to="Player" method="update_lives"]
 [connection signal="body_entered" from="portal" to="key" method="_on_portail_1_body_entered"]
 [connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]
 [connection signal="body_exited" from="portal" to="key" method="_on_portail_1_body_exited"]

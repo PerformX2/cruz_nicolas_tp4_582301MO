@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bfi4h0gsmry4n"]
+[gd_scene load_steps=21 format=4 uid="uid://bfi4h0gsmry4n"]
 
 [ext_resource type="Texture2D" uid="uid://cacqfcwl63icl" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Tiles/Tilesheet - WOODS.png" id="1_80huu"]
 [ext_resource type="PackedScene" uid="uid://0in4fdamtkga" path="res://scenes/player.tscn" id="2_yngje"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bwp0rr42f4iti" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Backgrounds/layers/BUSH - BACKGROUND.png" id="10_tdh8a"]
 [ext_resource type="Texture2D" uid="uid://3r2qbmc2mdnx" path="res://assets/images/Pixel Art Tiles and Backgrounds - Woods/Backgrounds/layers/WOODS - First.png" id="11_3sfin"]
 [ext_resource type="PackedScene" uid="uid://bruwvlxxvms1c" path="res://scenes/hud.tscn" id="15_nw2bk"]
+[ext_resource type="PackedScene" uid="uid://c6m8bqgryuu43" path="res://scenes/hazard.tscn" id="17_wsxs7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ancdk"]
 texture = ExtResource("1_80huu")
@@ -1278,6 +1279,9 @@ motion_mirroring = Vector2(512, 0)
 texture_filter = 1
 texture = ExtResource("11_3sfin")
 centered = false
+
+[node name="Hazard" parent="." instance=ExtResource("17_wsxs7")]
+position = Vector2(612, 156)
 
 [connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]
 [connection signal="body_exited" from="portal" to="portal" method="_on_body_exited"]

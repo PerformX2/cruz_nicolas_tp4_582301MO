@@ -1,14 +1,12 @@
 extends Control
-class_name HUD
 
-@export var honeybucket_label : Label
-@export var portal_label : Label
+# This ensures we are targeting the Label you created
+@onready var health_label = $HealthLabel
 
-func update_honeybucket_label(number : int):
-	honeybucket_label.text = "x " + str(number)
-
-func portal_opened():
-	portal_label.text = "PORTAL OPENED !"
-
-func portal_closed():
-	portal_label.text = "PORTAL CLOSED... COLLECT THE HONEYBUCKET!"
+# We use 'value' to avoid the "Shadowed Variable" warning
+func update_lives(value: int):
+	# Update the text to show "Lives: 3", "Lives: 2", etc.
+	if health_label:
+		health_label.text = "Lives: " + str(value)
+	
+	print("HUD Updated: Lives = ", value)
