@@ -2,7 +2,7 @@
 
 Voici mon répositoire Github pour le travail personel 4 de Godot en interactivité ludique (Collège Montmorency A25). 
 
-Ce répositoire contient mon projet "Wunu world". Ce jeu est succédé du travail personel 3 (https://github.com/PerformX2/cruz_nicolas_tp3_582301MO.git) en interactivité ludique (Collège Montmorency A25). Contrairement au travail personel 3, le travail personel 4 est une version prête à être publiée. Avant, il n'y avait aucune situation d'échec dans mon jeu. Maintenant, il y a des abeilles qui peuvent faire perdre des vies au joueur. Il y a également des abeilles géantes qui font perdre 2x plus de vie. 
+Ce répositoire contient mon projet "Wunu world". Ce jeu est succédé du travail personel 3 (https://github.com/PerformX2/cruz_nicolas_tp3_582301MO.git) en interactivité ludique (Collège Montmorency A25). Contrairement au travail personel 3, le travail personel 4 est une version prête à être publiée. Avant, il n'y avait aucune situation d'échec dans mon jeu. Maintenant, il y a des abeilles qui peuvent faire perdre des vies au joueur.
 
 Ce projet a été fait individuellement sur Godot (4.4.1_stable_win64). J'ai publié Wunu World en version HTML pour le jouer en version web. Ce jeu a été fait par Nicolas Cruz. C'est jeu d'aventure en 2D de type platformer.
 
